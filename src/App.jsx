@@ -34,29 +34,29 @@ const ROUNDS = ["R32","R16","QF","SF","F"];
 const ROUND_LABELS = { R32:"Round of 32", R16:"Round of 16", QF:"Quarterfinals", SF:"Semifinals", F:"Final" };
 
 // R32 indices: M73=0,M74=1,M75=2,M76=3,M77=4,M78=5,M79=6,M80=7,M81=8,M82=9,M83=10,M84=11,M85=12,M86=13,M87=14,M88=15
-const R16_MAP = [[1,4],[0,2],[10,11],[8,9],[3,5],[6,7],[13,15],[12,14]];
+const R16_MAP = [[0,1],[2,3],[4,5],[6,7],[8,9],[10,11],[12,13],[14,15]];
 const QF_MAP  = [[0,1],[2,3],[4,5],[6,7]];
 const SF_MAP  = [[0,1],[2,3]];
 
 function initBracket() {
   return {
     R32: [
-      {id:"R32_0",  home:"South Africa", away:"Canada",        result:null, label:"M73 · Jun 28 · Los Angeles"},
-      {id:"R32_1",  home:"Germany",      away:"Paraguay",      result:null, label:"M74 · Jun 29 · Boston"},
-      {id:"R32_2",  home:"Netherlands",  away:"Morocco",       result:null, label:"M75 · Jun 29 · Monterrey"},
-      {id:"R32_3",  home:"Brazil",       away:"Japan",         result:null, label:"M76 · Jun 29 · Houston"},
-      {id:"R32_4",  home:"France",       away:"Sweden",        result:null, label:"M77 · Jun 30 · New Jersey"},
-      {id:"R32_5",  home:"Ivory Coast",  away:"Norway",        result:null, label:"M78 · Jun 30 · Dallas"},
-      {id:"R32_6",  home:"Mexico",       away:"Ecuador",       result:null, label:"M79 · Jul 1 · Mexico City"},
-      {id:"R32_7",  home:"England",      away:"DR Congo",      result:null, label:"M80 · Jul 1 · Atlanta"},
-      {id:"R32_8",  home:"USA",          away:"Bosnia & Herz.",result:null, label:"M81 · Jul 1 · San Francisco"},
-      {id:"R32_9",  home:"Belgium",      away:"Senegal",       result:null, label:"M82 · Jul 1 · Seattle"},
-      {id:"R32_10", home:"Portugal",     away:"Croatia",       result:null, label:"M83 · Jul 2 · Toronto"},
-      {id:"R32_11", home:"Spain",        away:"Austria",       result:null, label:"M84 · Jul 2 · Los Angeles"},
-      {id:"R32_12", home:"Switzerland",  away:"Algeria",       result:null, label:"M85 · Jul 2 · Vancouver"},
-      {id:"R32_13", home:"Argentina",    away:"Cape Verde",    result:null, label:"M86 · Jul 3 · Miami"},
-      {id:"R32_14", home:"Colombia",     away:"Ghana",         result:null, label:"M87 · Jul 3 · Kansas City"},
-      {id:"R32_15", home:"Australia",    away:"Egypt",         result:null, label:"M88 · Jul 3 · Dallas"},
+      {id:"R32_0",  home:"Germany",      away:"Paraguay",      result:null, label:"M74 · Jun 29 · Boston"},
+      {id:"R32_1",  home:"France",       away:"Sweden",        result:null, label:"M77 · Jun 30 · New Jersey"},
+      {id:"R32_2",  home:"South Africa", away:"Canada",        result:null, label:"M73 · Jun 28 · Los Angeles"},
+      {id:"R32_3",  home:"Netherlands",  away:"Morocco",       result:null, label:"M75 · Jun 29 · Monterrey"},
+      {id:"R32_4",  home:"Portugal",     away:"Croatia",       result:null, label:"M83 · Jul 2 · Toronto"},
+      {id:"R32_5",  home:"Spain",        away:"Austria",       result:null, label:"M84 · Jul 2 · Los Angeles"},
+      {id:"R32_6",  home:"USA",          away:"Bosnia & Herz.",result:null, label:"M81 · Jul 1 · San Francisco"},
+      {id:"R32_7",  home:"Belgium",      away:"Senegal",       result:null, label:"M82 · Jul 1 · Seattle"},
+      {id:"R32_8",  home:"Brazil",       away:"Japan",         result:null, label:"M76 · Jun 29 · Houston"},
+      {id:"R32_9",  home:"Ivory Coast",  away:"Norway",        result:null, label:"M78 · Jun 30 · Dallas"},
+      {id:"R32_10", home:"Mexico",       away:"Ecuador",       result:null, label:"M79 · Jul 1 · Mexico City"},
+      {id:"R32_11", home:"England",      away:"DR Congo",      result:null, label:"M80 · Jul 1 · Atlanta"},
+      {id:"R32_12", home:"Argentina",    away:"Cape Verde",    result:null, label:"M86 · Jul 3 · Miami"},
+      {id:"R32_13", home:"Australia",    away:"Egypt",         result:null, label:"M88 · Jul 3 · Dallas"},
+      {id:"R32_14", home:"Switzerland",  away:"Algeria",       result:null, label:"M85 · Jul 2 · Vancouver"},
+      {id:"R32_15", home:"Colombia",     away:"Ghana",         result:null, label:"M87 · Jul 3 · Kansas City"},
     ],
     R16: Array.from({length:8}, (_,i) => ({id:`R16_${i}`, home:"TBD", away:"TBD", result:null, label:`R16 Match ${i+1}`})),
     QF:  Array.from({length:4}, (_,i) => ({id:`QF_${i}`,  home:"TBD", away:"TBD", result:null, label:`QF Match ${i+1}`})),
