@@ -348,24 +348,17 @@ function AdminModal({ bracket, focusMatch, onClose, onSetResult, onSetTeam }) {
       {m ? (
         <div style={{background:"rgba(255,255,255,0.04)",borderRadius:12,padding:16,border:"1px solid rgba(255,255,255,0.1)"}}>
           <div style={{fontSize:11,opacity:.5,marginBottom:10,textTransform:"uppercase",letterSpacing:1}}>{m.label}</div>
-          {selRound === "R32" && (
-            <div style={{display:"flex",gap:10,marginBottom:14,flexWrap:"wrap"}}>
-              {["home","away"].map(side => (
-                <div key={side} style={{flex:1,minWidth:140}}>
-                  <div style={{fontSize:11,opacity:.5,marginBottom:5,textTransform:"uppercase"}}>{side} team</div>
-                  <select value={m[side]} onChange={e => onSetTeam(m.id, side, e.target.value)} style={selSt}>
-                    <option value="TBD">❓ TBD</option>
-                    {ALL_TEAMS.map(t => <option key={t} value={t}>{flag(t)} {t}</option>)}
-                  </select>
-                </div>
-              ))}
-            </div>
-          )}
-          {selRound !== "R32" && (
-            <div style={{fontSize:12,opacity:.5,marginBottom:14}}>
-              Teams are set automatically from previous round results.
-            </div>
-          )}
+          <div style={{display:"flex",gap:10,marginBottom:14,flexWrap:"wrap"}}>
+            {["home","away"].map(side => (
+              <div key={side} style={{flex:1,minWidth:140}}>
+                <div style={{fontSize:11,opacity:.5,marginBottom:5,textTransform:"uppercase"}}>{side} team</div>
+                <select value={isTBD(m[side]) ? "TBD" : m[side]} onChange={e => onSetTeam(m.id, side, e.target.value)} style={selSt}>
+                  <option value="TBD">❓ TBD</option>
+                  {ALL_TEAMS.map(t => <option key={t} value={t}>{flag(t)} {t}</option>)}
+                </select>
+              </div>
+            ))}
+          </div>
           <div style={{fontSize:11,opacity:.5,marginBottom:8,textTransform:"uppercase",letterSpacing:1}}>Match Winner</div>
           {!canPick && <div style={{opacity:.4,fontSize:13}}>Both teams must be confirmed before picking a winner.</div>}
           {canPick && (
