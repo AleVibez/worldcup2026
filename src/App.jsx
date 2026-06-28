@@ -115,7 +115,12 @@ export default function App() {
   // Load on mount
   useEffect(() => {
     loadFromDB().then(d => {
-      if (d && d.bracket) { setBracket(d.bracket); setFriends(d.friends || []); }
+      if (d && d.bracket) {
+        const b = d.bracket;
+        propagate(b);
+        setBracket(b);
+        setFriends(d.friends || []);
+      }
       setLoaded(true);
     });
   }, []);
@@ -354,6 +359,11 @@ function AdminModal({ bracket, focusMatch, onClose, onSetResult, onSetTeam }) {
                   </select>
                 </div>
               ))}
+            </div>
+          )}
+          {selRound !== "R32" && (
+            <div style={{fontSize:12,opacity:.5,marginBottom:14}}>
+              Teams are set automatically from previous round results.
             </div>
           )}
           <div style={{fontSize:11,opacity:.5,marginBottom:8,textTransform:"uppercase",letterSpacing:1}}>Match Winner</div>
