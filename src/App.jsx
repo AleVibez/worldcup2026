@@ -33,8 +33,9 @@ const ALL_TEAMS = [
 const ROUNDS = ["R32","R16","QF","SF","F"];
 const ROUND_LABELS = { R32:"Round of 32", R16:"Round of 16", QF:"Quarterfinals", SF:"Semifinals", F:"Final" };
 
-const R16_MAP = [[1,4],[0,2],[3,5],[6,7],[10,11],[8,9],[13,15],[12,14]];
-const QF_MAP  = [[0,1],[4,5],[2,3],[6,7]];
+// R32 indices: M73=0,M74=1,M75=2,M76=3,M77=4,M78=5,M79=6,M80=7,M81=8,M82=9,M83=10,M84=11,M85=12,M86=13,M87=14,M88=15
+const R16_MAP = [[1,4],[0,2],[10,11],[8,9],[3,5],[6,7],[13,15],[12,14]];
+const QF_MAP  = [[0,1],[2,3],[4,5],[6,7]];
 const SF_MAP  = [[0,1],[2,3]];
 
 function initBracket() {
